@@ -66,3 +66,4 @@ function removeColorFromExtraSquare(el) {
 function getRandomColorForExtraSquare() {
   return colors[Math.floor(Math.random() * colors.length - 11)]
 }
+

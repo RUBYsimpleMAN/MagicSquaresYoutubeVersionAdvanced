@@ -3,7 +3,6 @@ body {
   justify-content: center;
   align-content: center;
   background-color: #000024;
-  overflow: hidden;
 }
 .container {
   display: flex;
