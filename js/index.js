@@ -18,52 +18,72 @@ for (let i=0; i < SQUARES; i++) {
   square.classList.add('square')
   
   square.addEventListener('mouseover', () => {
-    setColorForSquare(square)
+    setColor(square)
   })
   square.addEventListener('mouseout', () => {
-    removeColorFromSquare(square)
+    removeColor(square)
+  })
+  square.addEventListener('mousedown', () => {
+    setColor(square)
+  })
+  square.addEventListener('mousemove', () => {
+    removeColor(square)
+  })
+  square.addEventListener('mouseup', () => {
+    setColor(square)
+  })
+  square.addEventListener('click', () => {
+    removeColor(square)
   })
 
   for (let index=0; index < extraSQUARES; index++) {
     const extraSquare = document.createElement('div')
     extraSquare.classList.add('extraSquare')
     extraSquare.addEventListener('mouseover', () => {
-      setColorForSquare(extraSquare)
+      setColor(extraSquare)
     })
     extraSquare.addEventListener('mouseout', () => {
-      removeColorFromSquare(extraSquare)
+      removeColor(extraSquare)
     })
     square.appendChild(extraSquare)
   }
-
   container.appendChild(square)
 }
 
-function setColorForSquare(el) {
-  const color = getRandomColorForSquare()
+function setColor(el) {
+  const color = getRandomColor()
   el.style.background = color
   el.style.border = color
 }
 
-function removeColorFromSquare(el) {
+function removeColor(el) {
   el.style.background = 'transparent'
 }
 
-function getRandomColorForSquare() {
+function getRandomColor() {
   return colors[Math.floor(Math.random() * colors.length - 7)]
 }
 
-function setColorForExtraSquare(el) {
-  const color = getRandomColorForSquare()
-  el.style.background = color
-  el.style.border = color
-}
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-function removeColorFromExtraSquare(el) {
-  el.style.background = 'transparent'
-}
+// function responsEvent(event) {
+  // pShort.innerText = event.type
+  // pLongText.innerText = event.type + ', ' + pLongText.innerText
+// }
 
-function getRandomColorForExtraSquare() {
-  return colors[Math.floor(Math.random() * colors.length - 11)]
-}
+// Keyboard events
+// document.addEventListener('keydown', responsEvent, false)
+// document.addEventListener('keypress', responsEvent, false)
+// document.addEventListener('keyup', responsEvent, false)
+
+// Mouse events
+// document.addEventListener('mousedown', responsEvent, false)
+// document.addEventListener('mousemove', responsEvent, false)
+// document.addEventListener('mouseup', responsEvent, false)
+// document.addEventListener('click', responsEvent, false)
+
+// Touch events
+// document.addEventListener('touchstart', responsEvent, false)
+// document.addEventListener('touchmove', responsEvent, false)
+// document.addEventListener('touchend', responsEvent, false)
 
