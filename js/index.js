@@ -36,6 +36,16 @@ for (let i=0; i < SQUARES; i++) {
     removeColor(square)
   })
 
+  square.addEventListener('touchstart', () => {
+    removeColor(square)
+  })
+  square.addEventListener('touchmove', () => {
+    setColor(square)
+  })
+  square.addEventListener('touchend', () => {
+    removeColor(square)
+  })
+
   for (let index=0; index < extraSQUARES; index++) {
     const extraSquare = document.createElement('div')
     extraSquare.classList.add('extraSquare')
