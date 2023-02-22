@@ -43,13 +43,13 @@ for (let i=0; i < SQUARES; i++) {
   })
 
   container.addEventListener('touchstart', () => {
-    setColor(square)
+    setColor(this.square)
   })
   container.addEventListener('touchmove', () => {
-    setColor(square)
+    setColor(this.square)
   })
   container.addEventListener('touchend', () => {
-    removeColor(square)
+    removeColor(this.square)
   })
 
   // for (let index=0; index < extraSQUARES; index++) {
