@@ -19,20 +19,26 @@ for (let i=0; i < SQUARES; i++) {
   
   square.addEventListener('mouseover', () => {
     setColor(square)
+    removeColor(square)
   })
   square.addEventListener('mouseout', () => {
+    setColor(square)
     removeColor(square)
   })
   square.addEventListener('mousedown', () => {
     setColor(square)
+    removeColor(square)
   })
   square.addEventListener('mousemove', () => {
+    setColor(square)
     removeColor(square)
   })
   square.addEventListener('mouseup', () => {
     setColor(square)
+    removeColor(square)
   })
   square.addEventListener('click', () => {
+    setColor(square)
     removeColor(square)
   })
 
@@ -46,17 +52,17 @@ for (let i=0; i < SQUARES; i++) {
     removeColor(square)
   })
 
-  for (let index=0; index < extraSQUARES; index++) {
-    const extraSquare = document.createElement('div')
-    extraSquare.classList.add('extraSquare')
-    extraSquare.addEventListener('mouseover', () => {
-      setColor(extraSquare)
-    })
-    extraSquare.addEventListener('mouseout', () => {
-      removeColor(extraSquare)
-    })
-    square.appendChild(extraSquare)
-  }
+  // for (let index=0; index < extraSQUARES; index++) {
+  //   const extraSquare = document.createElement('div')
+  //   extraSquare.classList.add('extraSquare')
+  //   extraSquare.addEventListener('mouseover', () => {
+  //     setColor(extraSquare)
+  //   })
+  //   extraSquare.addEventListener('mouseout', () => {
+  //     removeColor(extraSquare)
+  //   })
+  //   square.appendChild(extraSquare)
+  // }
   container.appendChild(square)
 }
 
