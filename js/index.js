@@ -37,7 +37,7 @@ for (let i=0; i < SQUARES; i++) {
   })
 
   square.addEventListener('touchstart', () => {
-    removeColor(square)
+    setColor(square)
   })
   square.addEventListener('touchmove', () => {
     setColor(square)
