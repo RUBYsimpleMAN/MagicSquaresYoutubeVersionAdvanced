@@ -2,8 +2,7 @@ body {
   display: flex;
   justify-content: center;
   align-content: center;
-  background-color: #009024;
-  /* background-color: #000024; */
+  background-color: #000024;
 }
 .container {
   display: flex;
@@ -15,7 +14,8 @@ body {
   min-width: 96vw;
   max-width: 96vw;
   overflow: hidden;
-  background-color: #000036;
+  background-color: #009024;
+  /* background-color: #000036; */
   box-shadow: 0 0 24px darkseagreen;
 }
 
