@@ -17,40 +17,40 @@ for (let i=0; i < SQUARES; i++) {
   const square = document.createElement('div')
   square.classList.add('square')
   
-  square.addEventListener('mouseover', () => {
-    setColor(square)
-    removeColor(square)
-  })
-  square.addEventListener('mouseout', () => {
-    setColor(square)
-    removeColor(square)
-  })
-  square.addEventListener('mousedown', () => {
-    setColor(square)
-    removeColor(square)
-  })
-  square.addEventListener('mousemove', () => {
-    setColor(square)
-    removeColor(square)
-  })
-  square.addEventListener('mouseup', () => {
-    setColor(square)
-    removeColor(square)
-  })
-  square.addEventListener('click', () => {
-    setColor(square)
-    removeColor(square)
-  })
+  // square.addEventListener('mouseover', () => {
+  //   setColor(square)
+  //   removeColor(square)
+  // })
+  // square.addEventListener('mouseout', () => {
+  //   setColor(square)
+  //   removeColor(square)
+  // })
+  // square.addEventListener('mousedown', () => {
+  //   setColor(square)
+  //   removeColor(square)
+  // })
+  // square.addEventListener('mousemove', () => {
+  //   setColor(square)
+  //   removeColor(square)
+  // })
+  // square.addEventListener('mouseup', () => {
+  //   setColor(square)
+  //   removeColor(square)
+  // })
+  // square.addEventListener('click', () => {
+  //   setColor(square)
+  //   removeColor(square)
+  // })
 
-  container.addEventListener('touchstart', (event) => {
-    event.currentTarget.setColor(square)
+  square.addEventListener('touchstart', () => {
+    setColor(square)
   })
-  container.addEventListener('touchmove', (event) => {
-    event.currentTarget.setColor(square)
-  })
-  container.addEventListener('touchend', (event) => {
-    event.currentTarget.removeColor(square)
-  })
+  // square.addEventListener('touchmove', (event) => {
+  //   event.currentTarget.setColor(square)
+  // })
+  // square.addEventListener('touchend', (event) => {
+  //   event.currentTarget.removeColor(square)
+  // })
 
   // for (let index=0; index < extraSQUARES; index++) {
   //   const extraSquare = document.createElement('div')
@@ -66,19 +66,31 @@ for (let i=0; i < SQUARES; i++) {
   container.appendChild(square)
 }
 
-function setColor(el) {
-  const color = getRandomColor()
-  el.style.background = color
-  el.style.border = color
+function setColor(event) {
+  // event.target.innerHTML = 0
+  // container.innerHTML = 0
+  console.log("touch")
+  console.log(event)
+  console.log(event.target)
+  console.log(event.currentTarget)
+  // const color = getRandomColor()
+  // el.style.background = color
+  // el.style.border = color
 }
 
-function removeColor(el) {
-  el.style.background = 'transparent'
-}
+// function setColor(el) {
+  // const color = getRandomColor()
+  // el.style.background = color
+  // el.style.border = color
+// }
 
-function getRandomColor() {
-  return colors[Math.floor(Math.random() * colors.length - 7)]
-}
+// function removeColor(el) {
+//   el.style.background = 'transparent'
+// }
+
+// function getRandomColor() {
+//   return colors[Math.floor(Math.random() * colors.length - 7)]
+// }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -102,4 +114,3 @@ function getRandomColor() {
 // document.addEventListener('touchstart', responsEvent, false)
 // document.addEventListener('touchmove', responsEvent, false)
 // document.addEventListener('touchend', responsEvent, false)
-
