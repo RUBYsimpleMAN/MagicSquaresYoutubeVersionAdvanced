@@ -1,3 +1,13 @@
+const touchZoneFirst = document.querySelector('.touchZoneFirst__css-class');
+touchZoneFirst.addEventListener('touchstart', touchstartFunctionLushchenko)
+
+function touchstartFunctionLushchenko(event) {
+  console.log(event)
+  console.log('touch')
+  document.querySelector('.textOutputZoneFirst__css-class').innerHTML += `tap + `
+}
+
+
 const container = document.getElementById('container')
 const SQUARES = 500
 const extraSQUARES = 4
@@ -13,9 +23,20 @@ const colors = ['silver', 'Crimson', 'IndianRed', 'LightSalmon',
                 'LightSeaGreen', 'MediumAquamarine',
               ]
 
+const containerFirst = document.querySelector('.containerFirst')
+const qubes = document.querySelector('.squareFirst')
+console.log(qubes)
+
 for (let i=0; i < SQUARES; i++) {
-  const square = document.createElement('div')
-  square.classList.add('square')
+
+  qubes.addEventListener('touchstart', () => {
+    setColor(qubes.currentTarget)
+  })
+}
+
+        // for (let i=0; i < SQUARES; i++) {
+          // const square = document.createElement('div')
+          // square.classList.add('square')
   
   // square.addEventListener('mouseover', () => {
   //   setColor(square)
@@ -42,9 +63,9 @@ for (let i=0; i < SQUARES; i++) {
   //   removeColor(square)
   // })
 
-  square.addEventListener('touchstart', () => {
-    setColor(square)
-  })
+          // square.addEventListener('touchstart', () => {
+            // setColor(square)
+          // })
   // square.addEventListener('touchmove', (event) => {
   //   event.currentTarget.setColor(square)
   // })
@@ -63,8 +84,8 @@ for (let i=0; i < SQUARES; i++) {
   //   })
   //   square.appendChild(extraSquare)
   // }
-  container.appendChild(square)
-}
+          // container.appendChild(square)
+        // }
 
 function setColor(event) {
   // event.target.innerHTML = 0

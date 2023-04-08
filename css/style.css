@@ -1,16 +1,18 @@
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
   background-color: #000024;
 }
-.container {
+.container,
+.containerFirst {
   display: flex;
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
-  min-height: 96vh;
-  max-height: 96vh;
+  min-height: 46vh;
+  max-height: 46vh;
   min-width: 96vw;
   max-width: 96vw;
   overflow: hidden;
@@ -19,15 +21,15 @@ body {
   box-shadow: 0 0 24px darkseagreen;
 }
 
-.square {
+.square, .squareFirst {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  min-height: 64px;
+  /* min-height: 64px;
   max-height: 64px;
   min-width: 64px;
-  max-width: 64px;
+  max-width: 64px; */
   margin: -12px;
   /* border-radius: 8px;  TODO: apply random value */
   transition: 5s ease;
@@ -40,10 +42,10 @@ body {
   display: flex;
   justify-self: center;
   align-self: center;
-  min-height: 36px;
+  /* min-height: 36px;
   max-height: 36px;
   min-width: 36px;
-  max-width: 36px;
+  max-width: 36px; */
   margin: -6px;
   border-radius: 18px;
   transition: 8s ease;
@@ -52,3 +54,22 @@ body {
   box-shadow: 0 0 12px rgb(161, 215, 247);   /* TODO: apply random value */
   transition-duration: 40ms;
 }
+
+/* .containerLushch__css-class {} */
+.scoupe-wrap__Lushch__css-class {
+  border: moccasin solid 2px;
+}
+.touchZoneFirst__css-class,
+.touchZoneSecond__css-class {
+  margin: 3%;
+  border: magenta solid 2px;
+}
+.containerLushch__css-class h1,
+.textOutputZoneFirst__css-class,
+.textOutputZoneSecond__css-class {
+  min-height: 36px;
+  vertical-align: middle;
+  text-align: center;
+  color:rgb(161, 215, 247);
+}
+
