@@ -64,12 +64,16 @@ body {
   margin: 3%;
   border: magenta solid 2px;
 }
-.containerLushch__css-class h1,
+.containerLushch__css-class h1 {
+  text-align: center;
+  color:rgb(161, 215, 247);
+}
 .textOutputZoneFirst__css-class,
 .textOutputZoneSecond__css-class {
   min-height: 36px;
+  padding: 2%;
   vertical-align: middle;
-  text-align: center;
+  /* text-align: center; */
   color:rgb(161, 215, 247);
 }
 

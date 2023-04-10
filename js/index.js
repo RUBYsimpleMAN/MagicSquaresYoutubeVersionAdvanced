@@ -1,10 +1,18 @@
 const touchZoneFirst = document.querySelector('.touchZoneFirst__css-class');
-touchZoneFirst.addEventListener('touchstart', touchstartFunctionLushchenko)
+touchZoneFirst.addEventListener('touchstart', touchSTARTfunctionLushchenko)
+touchZoneFirst.addEventListener('touchend', touchENDfunctionLushchenko)
+touchZoneFirst.addEventListener('touchmove', touchMOVEfunctionLushchenko)
 
-function touchstartFunctionLushchenko(event) {
+function touchSTARTfunctionLushchenko(event) {
   console.log(event)
   console.log('touch')
-  document.querySelector('.textOutputZoneFirst__css-class').innerHTML += `tap + `
+  document.querySelector('.textOutputZoneFirst__css-class p').textContent += event.touches.length
+}
+function touchENDfunctionLushchenko(event) {
+  document.querySelector('.textOutputZoneFirst__css-class p').textContent += ` end `
+}
+function touchMOVEfunctionLushchenko(event) {
+  document.querySelector('.textOutputZoneFirst__css-class p').textContent += ` M `
 }
 
 
