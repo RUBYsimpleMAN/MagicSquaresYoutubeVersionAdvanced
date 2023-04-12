@@ -17,6 +17,7 @@ body {
   max-height: 96vh;
   min-width: 96vw;
   max-width: 96vw;
+  /* margin: -12px -12px -12px -12px; */
   overflow: hidden;
   /* background-color: #009024; */
   background-color: #000036;
@@ -36,7 +37,7 @@ body {
   margin: -12px;
   /* border-radius: 8px;  TODO: apply random value */
   transition: 0.2s ease;
-  /* border: 1px solid red; */
+  border: 1px solid red;
 }
 /* .square:hover { */
   /* box-shadow: 0 0 24px darkseagreen;   TODO: apply random value */

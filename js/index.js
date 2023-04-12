@@ -1,8 +1,6 @@
-const headerOne = document.querySelector('.containerLushch__css-class h1')
-headerOne.addEventListener('click', () => setColor(headerOne))
-
 const container = document.getElementById('container')
-const SQUARES = 500
+console.log(container)
+const SQUARES = 160
 const extraSQUARES = 4
 const colors = ['silver', 'Crimson', 'IndianRed', 'LightSalmon',
                 'Salmon', 'DarkRed', 'DarkSalmon', 'Red',
@@ -15,10 +13,54 @@ const colors = ['silver', 'Crimson', 'IndianRed', 'LightSalmon',
                 'DarkSeaGreen', 'MediumSeaGreen', 'Blue', 'Aqua',
                 'LightSeaGreen', 'MediumAquamarine' ]
 
-
 for (let i=0; i < SQUARES; i++) {
-  const square = document.createElement('div')
-  square.classList.add('square')
+  const squareCreation = document.createElement('div')
+  console.log('squareCreation', squareCreation)
+  squareCreation.classList.add('square')
+  console.log('StyledSquareCreation', squareCreation)
+  container.appendChild(squareCreation)
+}
+const squares = document.getElementsByClassName('square')
+console.log('squares', squares)
+
+
+for (let s = 0; s < squares.length; s++) {
+  // const square = document.querySelector('.square')
+  const square = squares[s]
+  
+  console.log('square-element', square)
+
+  // squares[s].addEventListener('click', () => {
+  //   setColor(square)
+  // })
+
+  square.addEventListener('touchstart', () => {
+    setColor(square)
+  })
+  square.addEventListener('touchmove', () => {
+    setColor(square)
+  })
+  square.addEventListener('touchend', () => {
+    removeColor(square)
+  })
+}
+
+function setColor(el) {
+  const color = getRandomColor()
+  el.style.background = color
+  // el.currentTarget.style.border.color = color
+}
+
+function removeColor(el) {
+  el.style.background = 'transparent'
+}
+
+function getRandomColor() {
+  return colors[Math.floor(Math.random() * colors.length)]
+}
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   // square.addEventListener('mouseover', () => {
   //   setColor(square)
@@ -40,16 +82,6 @@ for (let i=0; i < SQUARES; i++) {
   //   setColor(square)
   // })
 
-  square.addEventListener('touchstart', () => {
-    setColor(square)
-  })
-  square.addEventListener('touchmove', () => {
-    setColor(square)
-  })
-  square.addEventListener('touchend', () => {
-    removeColor(square)
-  })
-
   // for (let index=0; index < extraSQUARES; index++) {
   //   const extraSquare = document.createElement('div')
   //   extraSquare.classList.add('extraSquare')
@@ -59,28 +91,19 @@ for (let i=0; i < SQUARES; i++) {
   //   extraSquare.addEventListener('mouseout', () => {
   //     removeColor(extraSquare)
   //   })
+  //   extraSquare.addEventListener('touchstart', () => {
+  //     setColor(extraSquare)
+  //   })
+  //   extraSquare.addEventListener('touchmove', () => {
+  //     setColor(extraSquare)
+  //   })
+  //   extraSquare.addEventListener('touchend', () => {
+  //     removeColor(extraSquare)
+  //   })
   //   square.appendChild(extraSquare)
   // }
-  container.appendChild(square)
-}
 
 
-function setColor(el) {
-  const color = getRandomColor()
-  el.style.background = color
-  el.style.border = color
-}
-
-function removeColor(el) {
-  el.style.background = 'transparent'
-}
-
-function getRandomColor() {
-  return colors[Math.floor(Math.random() * colors.length)]
-}
-
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   // event.target.innerHTML = 0
   // container.innerHTML = 0
