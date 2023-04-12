@@ -20,25 +20,25 @@ for (let i=0; i < SQUARES; i++) {
   const square = document.createElement('div')
   square.classList.add('square')
 
-  square.addEventListener('mouseover', () => {
-    setColor(square)
-  })
-  square.addEventListener('mouseout', () => {
-    removeColor(square)
-  })
-  square.addEventListener('mousedown', () => {
-    setColor(square)
-  })
-  square.addEventListener('mousemove', () => {
-    setColor(square)
-  })
-  square.addEventListener('mouseup', () => {
-    setColor(square)
-    removeColor(square)
-  })
-  square.addEventListener('click', () => {
-    setColor(square)
-  })
+  // square.addEventListener('mouseover', () => {
+  //   setColor(square)
+  // })
+  // square.addEventListener('mouseout', () => {
+  //   removeColor(square)
+  // })
+  // square.addEventListener('mousedown', () => {
+  //   setColor(square)
+  // })
+  // square.addEventListener('mousemove', () => {
+  //   setColor(square)
+  // })
+  // square.addEventListener('mouseup', () => {
+  //   setColor(square)
+  //   removeColor(square)
+  // })
+  // square.addEventListener('click', () => {
+  //   setColor(square)
+  // })
 
   square.addEventListener('touchstart', () => {
     setColor(square)
@@ -50,17 +50,17 @@ for (let i=0; i < SQUARES; i++) {
     removeColor(square)
   })
 
-  for (let index=0; index < extraSQUARES; index++) {
-    const extraSquare = document.createElement('div')
-    extraSquare.classList.add('extraSquare')
-    extraSquare.addEventListener('mouseover', () => {
-      setColor(extraSquare)
-    })
-    extraSquare.addEventListener('mouseout', () => {
-      removeColor(extraSquare)
-    })
-    square.appendChild(extraSquare)
-  }
+  // for (let index=0; index < extraSQUARES; index++) {
+  //   const extraSquare = document.createElement('div')
+  //   extraSquare.classList.add('extraSquare')
+  //   extraSquare.addEventListener('mouseover', () => {
+  //     setColor(extraSquare)
+  //   })
+  //   extraSquare.addEventListener('mouseout', () => {
+  //     removeColor(extraSquare)
+  //   })
+  //   square.appendChild(extraSquare)
+  // }
   container.appendChild(square)
 }
 
