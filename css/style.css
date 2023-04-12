@@ -26,13 +26,14 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  /* min-height: 64px;
+  min-height: 64px;
   max-height: 64px;
   min-width: 64px;
-  max-width: 64px; */
+  max-width: 64px;
   margin: -12px;
   /* border-radius: 8px;  TODO: apply random value */
   transition: 5s ease;
+  border: 2px solid red;
 }
 .square:hover {
   box-shadow: 0 0 24px darkseagreen;   /* TODO: apply random value */

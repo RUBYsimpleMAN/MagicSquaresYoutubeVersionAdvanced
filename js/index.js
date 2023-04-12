@@ -1,3 +1,6 @@
+const headerOne = document.querySelector('.containerLushch__css-class h1')
+headerOne.addEventListener('click', () => setColor(headerOne))
+
 const container = document.getElementById('container')
 const SQUARES = 500
 const extraSQUARES = 4
@@ -9,20 +12,9 @@ const colors = ['silver', 'Crimson', 'IndianRed', 'LightSalmon',
                 'Brown', 'LightSteelBlue', 'PeachPuff', 'DarkKhaki',
                 'Gainsboro', 'MediumOrchid', 'LightCoral',
                 'MediumTurquoise', 'YellowGreen', 'Lime',
-                'DarkSeaGreen', 'MediumSeaGreen',
-                'LightSeaGreen', 'MediumAquamarine',
-              ]
+                'DarkSeaGreen', 'MediumSeaGreen', 'Blue', 'Aqua',
+                'LightSeaGreen', 'MediumAquamarine' ]
 
-const containerFirst = document.querySelector('.containerFirst')
-const qubes = document.querySelector('.squareFirst')
-console.log(qubes)
-
-for (let i=0; i < SQUARES; i++) {
-
-  qubes.addEventListener('touchstart', () => {
-    setColor(qubes.currentTarget)
-  })
-}
 
 for (let i=0; i < SQUARES; i++) {
   const square = document.createElement('div')
@@ -30,19 +22,15 @@ for (let i=0; i < SQUARES; i++) {
 
   square.addEventListener('mouseover', () => {
     setColor(square)
-    removeColor(square)
   })
   square.addEventListener('mouseout', () => {
-    setColor(square)
     removeColor(square)
   })
   square.addEventListener('mousedown', () => {
     setColor(square)
-    removeColor(square)
   })
   square.addEventListener('mousemove', () => {
     setColor(square)
-    removeColor(square)
   })
   square.addEventListener('mouseup', () => {
     setColor(square)
@@ -50,17 +38,16 @@ for (let i=0; i < SQUARES; i++) {
   })
   square.addEventListener('click', () => {
     setColor(square)
-    removeColor(square)
   })
 
   square.addEventListener('touchstart', () => {
     setColor(square)
   })
-  square.addEventListener('touchmove', (event) => {
-    event.currentTarget.setColor(square)
+  square.addEventListener('touchmove', () => {
+    setColor(square)
   })
-  square.addEventListener('touchend', (event) => {
-    event.currentTarget.removeColor(square)
+  square.addEventListener('touchend', () => {
+    removeColor(square)
   })
 
   for (let index=0; index < extraSQUARES; index++) {
@@ -77,6 +64,7 @@ for (let i=0; i < SQUARES; i++) {
   container.appendChild(square)
 }
 
+
 function setColor(el) {
   const color = getRandomColor()
   el.style.background = color
@@ -88,8 +76,9 @@ function removeColor(el) {
 }
 
 function getRandomColor() {
-  return colors[Math.floor(Math.random() * colors.length - 7)]
+  return colors[Math.floor(Math.random() * colors.length)]
 }
+
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -143,4 +132,16 @@ function getRandomColor() {
 // function touchMOVEfunctionLushchenko(event) {
 //   console.log(event)
 //   document.querySelector('.textOutputZoneFirst__css-class p').textContent += ` M `
+// }
+
+
+// const containerFirst = document.querySelector('.containerFirst')
+// const qubes = document.querySelectorAll('.squareFirst')
+// console.log(qubes) 
+
+// for (let i=0; i < qubes; i++) {
+//   qubes.addEventListener('touchstart', (event) => {
+//   console.log(event)
+//   setColor(qubes.currentTarget)
+//   })
 // }
