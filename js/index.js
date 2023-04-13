@@ -1,6 +1,6 @@
 const container = document.getElementById('container')
 console.log(container)
-const SQUARES = 1600
+const SQUARES = 3000
 const extraSQUARES = 4
 const colors = ['silver', 'Crimson', 'IndianRed', 'LightSalmon',
                 'Salmon', 'DarkRed', 'DarkSalmon', 'Red',
