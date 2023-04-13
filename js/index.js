@@ -42,11 +42,7 @@ for (let i=0; i < SQUARES; i++) {
         event.target.style.background = setColor(event.target)
     // console.log('event.target', event.target)
     // console.log('eventCurTarget', event.currentTarget)
-  
-    // touchcancel
-    // event.preventDefault()
-  
-  
+    
     // for (let y = 0; y < squares.length; y++) {
       // console.log('squares.length', squares.length)
       // const square = squares[y]
@@ -84,6 +80,57 @@ for (let i=0; i < SQUARES; i++) {
   loop();
   }, 100);
 })();
+
+
+function setColor(el) {
+  const color = getRandomColor()
+  el.style.background = color
+  // el.currentTarget.style.border.color = color
+}
+
+function removeColor(el) {
+  el.style.background = 'transparent'
+}
+
+function getRandomColor() {
+  return colors[Math.floor(Math.random() * colors.length)]
+}
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// 5.8 The touchcancel event
+
+// A user agent must dispatch this event type to indicate when a touch point has been disrupted
+// in an implementation-specific manner, such as a synchronous event or action originating
+// from the UA canceling the touch, or the touch point leaving the document window into a non-document area
+// which is capable of handling user interactions (e.g. the UA's native user interface,
+// or an area of the document which is managed by a plug-in). A user agent may also dispatch this event type
+// when the user places more touch points on the touch surface than the device or implementation is configured to store,
+// in which case the earliest Touch object in the TouchList should be removed.
+
+// The target of this event must be the same Element on which the touch point
+// started when it was first placed on the surface, even if the touch point
+// has since moved outside the interactive area of the target element.
+
+// The touch point or points that were removed must be included in the
+// changedTouches attribute of the TouchEvent, and must not be included
+// in the touches and targetTouches attributes.
+
+
+// 6. Retargeting
+
+// The following section describes retargeting steps, defined in [WHATWG-DOM].
+
+// Touch object has an associated unadjustedTarget (null or EventTarget). Unless stated otherwise it is null.
+
+// TouchEvent's retargeting steps, given a touchEvent, must run these steps:
+
+//     For each Touch touch in touchEvent's touches, targetTouches, and changedTouches members:
+//         Set touch's unadjustedTarget to touch's target if touch's unadjustedTarget is null.
+//         Set touch's target to the result of invoking retargeting touch's unadjustedTarget against touchEvent's target.
+
+
 
 // function handleCancel(evt) {
 //   evt.preventDefault();
@@ -140,55 +187,6 @@ for (let i=0; i < SQUARES; i++) {
 //     console.log('Click!');
 //   }
 // });
-
-function setColor(el) {
-  const color = getRandomColor()
-  el.style.background = color
-  // el.currentTarget.style.border.color = color
-}
-
-function removeColor(el) {
-  el.style.background = 'transparent'
-}
-
-function getRandomColor() {
-  return colors[Math.floor(Math.random() * colors.length)]
-}
-
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-// 5.8 The touchcancel event
-
-// A user agent must dispatch this event type to indicate when a touch point has been disrupted
-// in an implementation-specific manner, such as a synchronous event or action originating
-// from the UA canceling the touch, or the touch point leaving the document window into a non-document area
-// which is capable of handling user interactions (e.g. the UA's native user interface,
-// or an area of the document which is managed by a plug-in). A user agent may also dispatch this event type
-// when the user places more touch points on the touch surface than the device or implementation is configured to store,
-// in which case the earliest Touch object in the TouchList should be removed.
-
-// The target of this event must be the same Element on which the touch point
-// started when it was first placed on the surface, even if the touch point
-// has since moved outside the interactive area of the target element.
-
-// The touch point or points that were removed must be included in the
-// changedTouches attribute of the TouchEvent, and must not be included
-// in the touches and targetTouches attributes.
-
-
-// 6. Retargeting
-
-// The following section describes retargeting steps, defined in [WHATWG-DOM].
-
-// Touch object has an associated unadjustedTarget (null or EventTarget). Unless stated otherwise it is null.
-
-// TouchEvent's retargeting steps, given a touchEvent, must run these steps:
-
-//     For each Touch touch in touchEvent's touches, targetTouches, and changedTouches members:
-//         Set touch's unadjustedTarget to touch's target if touch's unadjustedTarget is null.
-//         Set touch's target to the result of invoking retargeting touch's unadjustedTarget against touchEvent's target.
-
 
 
     // event.target
