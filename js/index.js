@@ -31,15 +31,19 @@ for (let i=0; i < SQUARES; i++) {
 // var realTarget = document.elementFromPoint(myLocation.clientX, myLocation.clientY);
 
 
-( function loop() {
-  setTimeout(() => {
 
-  container.addEventListener('touchstart', (event) => {
-    // console.log('event', event)
+// ( function loop() {
+//   setTimeout(() => {
+
+  // container.addEventListener('touchstart', (event) => {
+  //   console.log('event', event)
   //const squares = document.getElementsByClassName('square')
     // const squares = document.getElementsByClassName('square')
     // console.log('squares', squares)
-        event.target.style.background = setColor(event.target)
+    // console.log('event.layerX', event.layerX)
+    // console.log('event.layerY', event.layerY)
+    // document.elementFromPoint(event.layerX, event.layerY)
+    //                             event.target.style.background = setColor(event.target)
     // console.log('event.target', event.target)
     // console.log('eventCurTarget', event.currentTarget)
     
@@ -53,33 +57,44 @@ for (let i=0; i < SQUARES; i++) {
         // setColor(square)
       // }
     // }
-  })
+  // })
   
-  container.addEventListener('touchend', (event) => {
+  container.addEventListener('touchmove', (event) => {
+    console.log('event', event)
+    console.log('event.target', event.target)
+    console.log('event.touches[0].clientX', event.touches[0].clientX)
+    console.log('event.touches[0].clientY', event.touches[0].clientY)
+    // document.elementFromPoint(event.layerX, event.layerY)
+    let currentEl = document.elementFromPoint(event.touches[0].clientX, event.touches[0].clientY)
+    currentEl = setColor(currentEl)
+    // event.target.style.background = setColor(event.target)
+  })
+
+  // container.addEventListener('touchend', (event) => {
     // console.log('touchend-event', event)
     // console.log('touchend-event.target', event.target)
     // event.target.style.background = removeColor(event.target)
-    event.target.style.background = 'transparent'
-  })
+  //   event.target.style.background = 'transparent'
+  // })
   
-  container.addEventListener('touchcancel', (event) => {
+  // container.addEventListener('touchcancel', (event) => {
 
-    evt.preventDefault();
-    console.log('touchcancel', event.changedTouches);
-    const touches = event.changedTouches;
+  //   evt.preventDefault();
+  //   console.log('touchcancel', event.changedTouches);
+  //   const touches = event.changedTouches;
     
-    for (let i = 0; i < touches.length; i++) {
-      let idx = ongoingTouchIndexById(touches[i].identifier);
-      ongoingTouches.splice(idx, 1); // remove it; we're done
-    }
+  //   for (let i = 0; i < touches.length; i++) {
+  //     let idx = ongoingTouchIndexById(touches[i].identifier);
+  //     ongoingTouches.splice(idx, 1); // remove it; we're done
+  //   }
 
-    console.log('touchcancel-event', event)
-    console.log('touchcancel-event.target', event.target)
-  })
+  //   console.log('touchcancel-event', event)
+  //   console.log('touchcancel-event.target', event.target)
+  // })
   
-  loop();
-  }, 100);
-})();
+//   loop();
+//   }, 100);
+// })();
 
 
 function setColor(el) {
